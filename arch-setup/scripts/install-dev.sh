@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Updating system..."
-sudo pacman -Syu --noconfirm
-
 echo "Installing base development tools (C/C++ toolchain)..."
+
 sudo pacman -S --needed --noconfirm \
   base-devel \
   gcc \
@@ -20,13 +18,12 @@ echo "Installing Go..."
 sudo pacman -S --needed --noconfirm go
 
 echo "Installing Rust (rustup)..."
+
 if ! command -v rustup >/dev/null 2>&1; then
   sudo pacman -S --needed --noconfirm rustup
-  rustup default stable
 fi
 
-# Initialize Rust toolchain (stable by default)
+# IMPORTANT: rustup must run as USER, not root
 if ! command -v rustc >/dev/null 2>&1; then
-  echo "Setting up Rust toolchain (stable)..."
   rustup default stable
 fi
