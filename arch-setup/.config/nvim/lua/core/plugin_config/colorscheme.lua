@@ -1,0 +1,21 @@
+-- require("black-metal").setup({
+--   -- optional configuration here
+--   theme = 'emperor',
+--   variant = 'light',
+--   alt_bg = true,
+--
+--   code_style = {
+--     comments = "italic",
+--     conditionals = "none",
+--     functions = "bold",
+--     keywords = "none",
+--     headings = "bold", -- Markdown headings
+--     operators = "none",
+--     keyword_return = "none",
+--     strings = "none",
+--     variables = "none",
+--   }
+-- })
+-- require("black-metal").load()
+
+vim.cmd[[colorscheme tokyonight-night]]

@@ -12,7 +12,8 @@ sudo pacman -S --needed --noconfirm \
   make \
   cmake \
   ninja \
-  pkgconf
+  pkgconf \
+  unzip
 
 echo "Installing Go..."
 sudo pacman -S --needed --noconfirm go
